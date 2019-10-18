@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterCourse">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="700dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:id="@+id/layout_1"
+                android:orientation="vertical"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_course"
+                    android:layout_height="120dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/light_green"
+                    android:text="@string/registerCourse"
+                    android:textSize="25sp"
+                    android:id="@+id/downbar"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/layout_1"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp">
+
+
+                <EditText
+                    android:layout_marginTop="50dp"
+                    android:hint="@string/edit_course"
+                    android:textSize="25dp"
+                    android:layout_margin="30dp"
+                    android:id="@+id/edt_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/add"
+                    android:layout_below="@id/edt_save"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="90dp"
+                    android:textColor="@color/white"
+                    android:onClick="add"
+                    android:text="@string/add"
+                    android:textSize="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="15dp"/>
+
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/save"
+                    android:layout_below="@id/add"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:text="@string/save"
+                    android:textSize="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="15dp"/>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

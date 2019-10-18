@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="800dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="680dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="620dp"
+                    android:layout_gravity="bottom">
+
+
+
+                    <ImageView
+                        android:background="@drawable/bottom_image"
+                        android:id="@+id/archive"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_gravity="bottom"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="100dp">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="150dp"
+                            android:layout_height="250dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginStart="20dp">
+
+                            <ImageView
+                                android:id="@+id/register"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:padding="16dp"
+                                android:background="@drawable/archive_1"
+                                android:layout_margin="16dp"
+                                android:layout_marginTop="100dp" />
+                            <Button
+                                android:id="@+id/archive_btn"
+                                android:layout_width="150dp"
+                                android:layout_height="70dp"
+                                android:text="@string/archive"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:background="@drawable/button"
+                                android:layout_marginTop="10dp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="150dp"
+                            android:layout_height="250dp"
+                            android:layout_marginLeft="20dp">
+
+                            <ImageView
+                                android:id="@+id/reg"
+                                android:layout_width="100dp"
+                                android:layout_height="90dp"
+                                android:padding="16dp"
+                                android:background="@drawable/register_2"
+                                android:layout_margin="16dp"
+                                android:layout_marginTop="100dp"
+                                />
+                            <Button
+                                android:layout_width="150dp"
+                                android:layout_height="70dp"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/register"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:onClick="register"
+                                android:id="@+id/register_btn"
+                                android:background="@drawable/button"/>
+
+
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </FrameLayout>
+
+
+            </FrameLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>
