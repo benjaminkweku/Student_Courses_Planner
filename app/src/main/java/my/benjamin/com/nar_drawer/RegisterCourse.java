@@ -28,6 +28,7 @@ public class RegisterCourse extends AppCompatActivity {
         program=(TextView)findViewById(R.id.downbar);
         edit_input=(EditText)findViewById(R.id.edt_save);
         add=(Button)findViewById(R.id.add);
+        // Database
         DatabaseManager db = new DatabaseManager(this);  // an object for the DatabaseManager
         // Class, parameter this obj to context obj;
 

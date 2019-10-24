@@ -43,53 +43,53 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_below="@id/layout_1"
                 android:layout_height="400dp"
-                android:layout_marginTop="20dp">
+                android:layout_below="@id/layout_1"
+                android:layout_marginTop="165dp">
 
 
                 <EditText
-                    android:layout_marginTop="50dp"
-                    android:hint="@string/edit_course"
-                    android:textSize="25dp"
-                    android:layout_margin="30dp"
                     android:id="@+id/edt_save"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp"
+                    android:layout_margin="30dp"
+                    android:layout_marginTop="50dp"
+                    android:hint="@string/edit_course"
+                    android:textSize="25dp" />
 
                 <Button
+                    android:id="@+id/add"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:id="@+id/add"
                     android:layout_below="@id/edt_save"
-                    android:background="@drawable/button"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="90dp"
-                    android:textColor="@color/white"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button"
                     android:onClick="add"
                     android:text="@string/add"
-                    android:textSize="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
 
 
                 <Button
+                    android:id="@+id/save"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:id="@+id/save"
                     android:layout_below="@id/add"
-                    android:background="@drawable/button"
-                    android:layout_marginTop="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/save"
-                    android:textSize="25dp"
-                    android:layout_marginRight="25dp"
                     android:layout_marginStart="25dp"
                     android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="15dp"/>
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/button"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
 
 
             </RelativeLayout>
