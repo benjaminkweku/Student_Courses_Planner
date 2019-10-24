@@ -14,6 +14,7 @@ public class RegisterCourse extends AppCompatActivity {
     private TextView program;
     private EditText edit_input;
     private Button add;
+    static boolean check = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +24,17 @@ public class RegisterCourse extends AppCompatActivity {
         edit_input=(EditText)findViewById(R.id.edt_save);
         add=(Button)findViewById(R.id.add);
 
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                program.setText(edit_input.getText().toString());
+                while(check) {
+                    if (program.getText() != edit_input.getText()) {
+                        program.setText(edit_input.getText().toString());
+                        check = false;
+                    }
+                }
             }
         });
     }
