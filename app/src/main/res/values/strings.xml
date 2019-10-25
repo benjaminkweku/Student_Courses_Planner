@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Matcha-Coders</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -13,10 +13,10 @@
     <string name="menu_about">About Developers</string>
     <string name="register">Register</string>
     <string name="archive">Archive</string>
-    <string name="registerCourse">Program</string>
-    <string name="edit_course">Register Course Here...</string>
-    <string name="edt_link">Enter courses</string>
-    <string name="save">Save</string>
-    <string name="add">Add</string>
+    <string name="program_name_str">Program</string>
+    <string name="program_str">Enter Program Of Study...</string>
+    <string name="courses_str">Enter Courses...</string>
+    <string name="Done">Done</string>
+    <string name="add_courses">Add Course</string>
 
 </resources>

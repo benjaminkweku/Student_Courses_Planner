@@ -35,9 +35,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@color/light_green"
-                    android:text="@string/registerCourse"
+                    android:id="@+id/id_tv_program_name"
                     android:textSize="25sp"
-                    android:id="@+id/downbar"
+                    android:text="@string/program_name_str"
                     android:textColor="@color/white"
                     android:gravity="center"/>
             </LinearLayout>
@@ -51,43 +51,43 @@
 
 
                 <EditText
-                    android:id="@+id/edt_save"
+                    android:id="@+id/id_et_program_entry"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="30dp"
                     android:layout_marginTop="50dp"
-                    android:hint="@string/edit_course"
-                    android:textSize="25dp" />
+                    android:hint="@string/program_str"
+                    android:inputType="text"
+                    android:textSize="20sp" />
 
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_below="@id/edt_save"
+                android:layout_below="@id/id_et_program_entry"
                 android:orientation="horizontal"
                 android:layout_height="75dp">
 
             <EditText
                 android:layout_marginTop="50dp"
-                android:hint="@string/edt_link"
-                android:textSize="25sp"
+                android:id="@+id/id_et_courses_entry"
+                android:hint="@string/courses_str"
                 android:layout_margin="30dp"
                 android:backgroundTint="@color/light_green"
-                android:enabled="true"
-                android:focusable="true"
                 android:layout_marginBottom="10dp"
                 android:textCursorDrawable="@drawable/cursor"
-                android:id="@+id/edt_link"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                tools:ignore="Autofill" />
+                android:textSize="20sp"
+                tools:ignore="Auto-fill" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/add"
+                android:id="@+id/id_btn_add_courses"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/edt_save"
+                android:layout_below="@id/id_et_program_entry"
                 android:layout_marginStart="25dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="90dp"
@@ -95,17 +95,17 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/button"
-                android:text="@string/add"
+                android:text="@string/add_courses"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
 
 
 
             <Button
-                android:id="@+id/save"
+                android:id="@+id/id_btn_done"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/add"
+                android:layout_below="@id/id_btn_add_courses"
                 android:layout_marginStart="25dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
@@ -113,9 +113,9 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/button"
-                android:text="@string/save"
+                android:text="@string/Done"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
 
 
 
