@@ -8,7 +8,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="700dp">
+        android:layout_height="700dp"
+        tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -42,10 +43,11 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_below="@id/layout_1"
-                android:layout_marginTop="165dp">
+                android:layout_marginTop="100dp">
 
 
                 <EditText
@@ -57,47 +59,74 @@
                     android:hint="@string/edit_course"
                     android:textSize="25dp" />
 
-                <Button
-                    android:id="@+id/add"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_below="@id/edt_save"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="90dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/button"
-                    android:onClick="add"
-                    android:text="@string/add"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
 
 
-                <Button
-                    android:id="@+id/save"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_below="@id/add"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/button"
-                    android:text="@string/save"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/edt_save"
+                android:orientation="horizontal"
+                android:layout_height="75dp">
+
+            <EditText
+                android:layout_marginTop="50dp"
+                android:hint="@string/edt_link"
+                android:textSize="25sp"
+                android:layout_margin="30dp"
+                android:backgroundTint="@color/light_green"
+                android:enabled="true"
+                android:focusable="true"
+                android:layout_marginBottom="10dp"
+                android:textCursorDrawable="@drawable/cursor"
+                android:id="@+id/edt_link"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                tools:ignore="Autofill" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/edt_save"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/add"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+
+
+
+
 
 
             </RelativeLayout>
 
 
         </RelativeLayout>
-
-
     </ScrollView>
 
 

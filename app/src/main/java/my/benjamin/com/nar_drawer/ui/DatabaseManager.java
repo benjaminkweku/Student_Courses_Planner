@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.util.Log;
 
 public class DatabaseManager extends SQLiteOpenHelper {
+    private  SQLiteDatabase db;
     private final static int DBVERSION = 1;
     // for the main table
     private final static String DBNAME = "COURSE_PLANNER";
@@ -37,6 +38,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     public DatabaseManager(Context context){
         super(context, DBNAME, null, DBVERSION);
+        Log.e("DATABASE OPERATION", "Database created / opened.....");
     }
 
     // mutator and accessor functions
@@ -58,7 +60,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         db.execSQL( "create table " + MAIN_TBL
                 + "(" + PROGRAMME + " varchar(60), " + ABOUT_DEVS + " varchar(255), " +
                 HELP + " varchar(255), " + CONTACTS + " varchar(255) " + ")" );
-        Log.e("DATABASE OPERATION", "Database created / opened.....");
+
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -68,7 +70,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public boolean insertProgrammeName(String programme_name){
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(PROGRAMME, programme_name);
         long status = db.insert(MAIN_TBL, null, contentValues);
@@ -84,7 +86,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
     *
     * */
 
-    public void createCourses_tbl(SQLiteDatabase db){
+    public void createCourses_tbl(){
+        SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(
                 "create table " + COURSES_TBL + "(" + COURSES_ID + " varchar(10) primary key, " +
                         COURSES_NAME + " varchar(255))"
@@ -92,7 +95,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public boolean inserIntoCourses_tbl(){
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COURSES_ID, generateCourseName(getUserCourseName()).toString());
         contentValues.put(COURSES_NAME, user_course_name);
@@ -111,19 +114,20 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 "create table " + COURSES_MATERIALS_TBL + "(" + COURSES_ID + " varchar(10) primary key,"
                         + COURSE_MATERIAL_LINK + " varchar(255)" + ")"
         );
+        Log.e(null, "table created");
     }
 
     public boolean insertCourseMaterials_tbl(){
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COURSES_ID, generateCourseName(getUserCourseName()).toString());
         contentValues.put(COURSE_MATERIAL_LINK, getMaterial_link());
         long status = db.insert(COURSES_MATERIALS_TBL, null, contentValues);
         // check if db insert was successful
-        if (status == -1){
-            return false;
-        } else
+        if (status != -1){
             return true;
+        } else
+            return false;
     }
 
     public void createPassQuestions_tbl(SQLiteDatabase db){
@@ -134,7 +138,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public boolean insertPastQuestions_tbl(){
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COURSES_ID, generateCourseName(getUserCourseName()).toString());
         contentValues.put(COURSE_MATERIAL_LINK, getPast_questions_link());
