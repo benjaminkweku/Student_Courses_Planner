@@ -1,5 +1,6 @@
 package my.benjamin.com.nar_drawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,6 @@ import my.benjamin.com.nar_drawer.ui.DatabaseManager;
 
 public class RegisterCourse extends AppCompatActivity {
 
-    Iterator it_store_courses_names = set_store_courses_names.iterator();
     //setting button variable
     private TextView tv_program;
     private EditText et_program_entry;
@@ -28,10 +28,13 @@ public class RegisterCourse extends AppCompatActivity {
     private Button btn_done;
     private EditText et_courses_entry;
     private HashMap<String, String> store_courses_names = new HashMap<>();
-    Set set_store_courses_names = (Set) store_courses_names.entrySet();
+
     private HashMap<String, String> store_course_materials = new HashMap<>();
     private HashMap<String, String> store_pass_questions = new HashMap<>();
-    private boolean db_flag = true;
+    Set set_store_courses_names = (Set) store_courses_names.entrySet();
+    Iterator it_store_courses_names = set_store_courses_names.iterator();
+    private boolean f_courses = true;
+    private boolean f_program = true;
     // Database
      DatabaseManager my_db; // an object for the DatabaseManager
 
@@ -52,6 +55,14 @@ public class RegisterCourse extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (et_program_entry.getText().length() > 0) {
+                    tv_program.setText(et_program_entry.getText());
+                    //tv_program.setEnabled(false);
+                    //tv_program.setFocusable(false);
+                } else {
+                    t_FieldEmpty();
+                    tv_program.setText("???");
+                }
                 if (et_courses_entry.getText().length() > 0) {
                     store_courses_names.put(my_db.generateCourse_id
                                     (et_courses_entry.getText().toString()),
@@ -72,12 +83,14 @@ public class RegisterCourse extends AppCompatActivity {
                 if (et_program_entry.getText().length() > 0) {
                     while (it_store_courses_names.hasNext()) {
                         Map.Entry map_entry = (Map.Entry) it_store_courses_names.next();
-                        db_flag = my_db.insertIntoCourses_tbl((String) map_entry.getValue());
+                        f_courses = my_db.insertIntoCourses_tbl((String) map_entry.getValue());
                         et_courses_entry.setText((String) map_entry.getValue());
-                        et_program_entry.setError("error, ");
+                        f_program = my_db.insertProgrammeName(et_program_entry.getText().toString());
                     }
-                    if (db_flag) {
+                    if (f_courses && f_program) {
                         t_successfulConnectStatus();
+                        Intent intent = new Intent(RegisterCourse.this, MainActivity.class);
+                        startActivity(intent);
 
                     } else {
                         t_unsuccessfulConnectStatus();
@@ -94,11 +107,11 @@ public class RegisterCourse extends AppCompatActivity {
     }
 
     private void t_unsuccessfulConnectStatus() {
-        Toast.makeText(this, "not successful", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Not successful", Toast.LENGTH_SHORT).show();
     }
 
     private void t_FieldEmpty() {
-        Toast.makeText(this, "program field cannot be empty", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Program field cannot be empty", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -106,20 +119,4 @@ public class RegisterCourse extends AppCompatActivity {
         Toast.makeText(this, "Empty Field", Toast.LENGTH_SHORT).show();
     }
 
-
 }
-
-//    checkProgramField();
-//
-//                if(et_courses.getText().toString() != "") {
-//        boolean insert_status = my_db.insertIntoCourses_tbl(et_courses.getText().toString());
-//        if (insert_status) {
-//            et_courses.setText("");
-//            t_successfulConnectStatus();
-//        } else {
-//            t_unsuccessfulConnectStatus();
-//        }
-//    }else{
-//        t_emptyFieldAlert();
-//    }
-//}

@@ -110,7 +110,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private void createCourses_tbl() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(
-                "create table " + COURSES_TBL + "(" + COURSES_ID + " varchar(10) primary key, " +
+                "create table " + COURSES_TBL + "(id primary key autoincrement," + COURSES_ID + " varchar(10) , " +
                         COURSES_NAME + " varchar(255))"
         );
         Log.e("TAG", "Courses table created");
@@ -130,7 +130,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     private void createCoursesMaterials_tbl() {
         db.execSQL(
-                "create table " + COURSES_MATERIALS_TBL + "(" + COURSES_ID + " varchar(10) primary key,"
+                "create table " + COURSES_MATERIALS_TBL + "(id primary key autoincrement, " + COURSES_ID + " varchar(10) primary key,"
                         + COURSE_MATERIAL_LINK + " varchar(255)" + ")"
         );
         Log.e("TAG", "table created");
@@ -149,7 +149,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     private void createPassQuestions_tbl() {
         db.execSQL(
-                "create table " +  COURSES_PAST_Q_TBL + "(" + COURSES_ID + " varchar(10) primary key," +
+                "create table " + COURSES_PAST_Q_TBL + "(id primary key autoincrement, " + COURSES_ID + " varchar(10) primary key," +
                         COURSES_PAST_Q_LINK + " varchar(255)" + ")"
         );
     }
