@@ -32,7 +32,7 @@
                 android:background="@color/light_green"
                 android:text="@string/archive"
                 android:textSize="25sp"
-                android:id="@+id/downbar"
+                android:id="@+id/id_tv_program_name"
                 android:textColor="@color/white"
                 android:gravity="center"/>
         </LinearLayout>
